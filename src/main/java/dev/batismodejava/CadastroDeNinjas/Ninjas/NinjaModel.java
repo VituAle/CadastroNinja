@@ -1,7 +1,9 @@
-package dev.batismodejava.CadastroDeNinjas;
+package dev.batismodejava.CadastroDeNinjas.Ninjas;
 
+import dev.batismodejava.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
-import org.springframework.boot.autoconfigure.web.WebProperties;
+
+import java.util.List;
 
 //Entity transforma uma classe em uma base do banco de dados
 @Entity
@@ -16,6 +18,11 @@ public class NinjaModel {
     private String email;
     private int idade;
 
+    @ManyToOne
+    @JoinColumn(name = "missoes_id") // chave estrangeira
+    private MissoesModel missoes;
+
+
     public NinjaModel() {
     }
 
@@ -23,6 +30,10 @@ public class NinjaModel {
         this.email = email;
         this.nome = nome;
         this.idade = idade;
+    }
+
+    public NinjaModel(MissoesModel missoes) {
+        this.missoes = missoes;
     }
 
     public String getNome() {
