@@ -10,38 +10,28 @@ import java.util.List;
 
 //Entity transforma uma classe em uma base do banco de dados
 @Entity
-@Table(name = "tb_cadastro_de_ninjas")
+@Table(name ="tb_cadastro")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-
 public class NinjaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id")
+    @Column(name ="id")
     private long id;
 
-    @Column(name = "nome")
+    @Column(name ="nome")
     private String nome;
 
     @Column(unique = true)
     private String email;
+    
 
-    @Column(name = "img_url")
-    private String imgURL;
-
-
-    @Column(name = "idade")
+    @Column(name ="idade")
     private int idade;
 
     @ManyToOne
-    @JoinColumn(name = "missoes_id") // chave estrangeira
+    @JoinColumn(name ="missoes_id") // chave estrangeira
     private MissoesModel missoes;
-
-
-    public NinjaModel(MissoesModel missoes) {
-        this.missoes = missoes;
-    }
-
 }

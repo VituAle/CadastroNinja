@@ -1,5 +1,6 @@
 package dev.batismodejava.CadastroDeNinjas.Missoes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.batismodejava.CadastroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -9,7 +10,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 @Entity
-@Table (name = "tb_cadastro_de_missoes")
+@Table (name = "tb_missoes")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -22,9 +23,9 @@ public class MissoesModel {
     private String nome;
     private String dificuldade;
 
-    private NinjaModel ninja;
 
-    @OneToMany( mappedBy = "missoes")
+    @OneToMany(mappedBy = "missoes")
+    @JsonIgnore
     private List<NinjaModel> ninjas;
 
 }
