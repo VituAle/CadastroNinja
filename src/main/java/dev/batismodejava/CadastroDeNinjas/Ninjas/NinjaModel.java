@@ -2,9 +2,7 @@ package dev.batismodejava.CadastroDeNinjas.Ninjas;
 
 import dev.batismodejava.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -13,7 +11,8 @@ import java.util.List;
 @Table(name ="tb_cadastro")
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@Setter
 public class NinjaModel {
 
     @Id
@@ -26,12 +25,18 @@ public class NinjaModel {
 
     @Column(unique = true)
     private String email;
-    
+
+    @Column (name = "rank")
+    private String rank;
+
 
     @Column(name ="idade")
     private int idade;
 
+
     @ManyToOne
     @JoinColumn(name ="missoes_id") // chave estrangeira
     private MissoesModel missoes;
+
+
 }
