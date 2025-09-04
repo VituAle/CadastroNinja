@@ -1,43 +1,24 @@
 package dev.batismodejava.CadastroDeNinjas.Ninjas;
 
 import dev.batismodejava.CadastroDeNinjas.Missoes.MissoesModel;
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
-//Entity transforma uma classe em uma base do banco de dados
-@Entity
-@Table(name ="tb_cadastro")
-@NoArgsConstructor
+
 @AllArgsConstructor
-@ToString
-public class NinjaModel {
+@NoArgsConstructor
+public class NinjaDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="id")
     private long id;
-
-    @Column(name ="nome")
     private String nome;
-
-    @Column(unique = true)
     private String email;
-
-    @Column(name ="rank")
-    private String rank;
-    
-
-    @Column(name ="idade")
     private int idade;
-
-    @ManyToOne
-    @JoinColumn(name ="missoes_id") // chave estrangeira
+    private String rank;
     private MissoesModel missoes;
 
-    public long getId(long id) {
-        return this.id;
+    public long getId() {
+        return id;
     }
 
     public void setId(long id) {
@@ -60,20 +41,20 @@ public class NinjaModel {
         this.email = email;
     }
 
-    public String getRank() {
-        return rank;
-    }
-
-    public void setRank(String rank) {
-        this.rank = rank;
-    }
-
     public int getIdade() {
         return idade;
     }
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    public String getRank() {
+        return rank;
+    }
+
+    public void setRank(String rank) {
+        this.rank = rank;
     }
 
     public MissoesModel getMissoes() {
