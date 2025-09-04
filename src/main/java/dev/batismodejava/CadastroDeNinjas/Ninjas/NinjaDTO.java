@@ -1,15 +1,24 @@
 package dev.batismodejava.CadastroDeNinjas.Ninjas;
 
 import dev.batismodejava.CadastroDeNinjas.Missoes.MissoesModel;
+<<<<<<< HEAD
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
+=======
+import jakarta.persistence.Column;
+import lombok.*;
+
+@Getter
+@Setter
+>>>>>>> bcaa710f485a8b9d72729402fa6f4e2963500545
 @AllArgsConstructor
 @NoArgsConstructor
 public class NinjaDTO {
 
+<<<<<<< HEAD
     private long id;
     private String nome;
     private String email;
@@ -66,3 +75,15 @@ public class NinjaDTO {
     }
 }
 
+=======
+
+    private long id;
+    private String nome;
+    private String email;
+    private String rank;
+    private int idade;
+    private MissoesModel missoes;
+
+
+}
+>>>>>>> bcaa710f485a8b9d72729402fa6f4e2963500545

@@ -7,7 +7,10 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+<<<<<<< HEAD
 import org.springframework.jmx.export.annotation.ManagedOperation;
+=======
+>>>>>>> bcaa710f485a8b9d72729402fa6f4e2963500545
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -93,4 +96,8 @@ public class NinjaController {
         }
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> bcaa710f485a8b9d72729402fa6f4e2963500545
 }
